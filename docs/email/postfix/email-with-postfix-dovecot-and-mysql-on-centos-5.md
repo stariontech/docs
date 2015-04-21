@@ -158,7 +158,7 @@ Next, perform additional Postfix configuration to set up communication with the 
         user = mail_admin
         password = mail_admin_password
         dbname = mail
-        query = SELECT CONCAT(SUBSTRING_INDEX(email,<'@'>,-1),'/',SUBSTRING_INDEX(email,<'@'>,1),'/') FROM users WHERE email='%s'
+        query = SELECT CONCAT(SUBSTRING_INDEX(email,'@',-1),'/',SUBSTRING_INDEX(email,<'@'>,1),'/') FROM users WHERE email='%s'
         hosts = 127.0.0.1
         ~~~
 
